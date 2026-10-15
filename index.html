@@ -1,1 +1,746 @@
-!<!DO>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ryan's Rural Services | Wairarapa</title>
+
+    <meta name="description"
+          content="Ryan's Rural Services offers wood stacking,
+          car cleaning, lawn mowing and small outdoor jobs
+          throughout the Wairarapa, New Zealand.">
+
+    <style>
+        :root {
+            --green: #173d2b;
+            --dark-green: #102b1e;
+            --light-green: #e8efe8;
+            --white: #ffffff;
+            --text: #26332a;
+            --grey: #f5f6f3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        header {
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 54px;
+            height: 54px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .brand h1 {
+            font-size: 21px;
+            line-height: 1.2;
+        }
+
+        .brand p {
+            font-size: 12px;
+            color: #d7e4d9;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #b9d4bd;
+        }
+
+        .hero {
+            min-height: 500px;
+            padding: 85px 7%;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(16, 43, 30, 0.97),
+                    rgba(23, 61, 43, 0.78)
+                ),
+                linear-gradient(135deg, #45664a, #9baa87);
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #d0e4d1;
+        }
+
+        .hero h2 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            max-width: 560px;
+            font-size: 18px;
+            color: #e5eee5;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: var(--dark-green);
+            padding: 14px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid white;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #e8efe8;
+        }
+
+        .button-outline {
+            background: transparent;
+            color: white;
+            margin-left: 8px;
+        }
+
+        section {
+            padding: 75px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 42px;
+        }
+
+        .section-heading h2 {
+            color: var(--green);
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #5e695f;
+        }
+
+        .services {
+            background: var(--grey);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 28px 24px;
+            border-radius: 8px;
+            border-top: 4px solid var(--green);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            color: var(--green);
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #5e695f;
+            font-size: 15px;
+        }
+
+        .price {
+            display: inline-block;
+            margin-top: 18px;
+            background: var(--light-green);
+            color: var(--green);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 7px 12px;
+            border-radius: 4px;
+        }
+
+        .about-grid {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-panel {
+            background: var(--light-green);
+            padding: 35px;
+            border-radius: 8px;
+        }
+
+        .about-panel h3 {
+            color: var(--green);
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .about-panel ul {
+            padding-left: 20px;
+        }
+
+        .about-panel li {
+            margin-bottom: 10px;
+        }
+
+        .about-text h2 {
+            color: var(--green);
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .contact {
+            background: var(--dark-green);
+            color: white;
+        }
+
+        .contact .section-heading h2 {
+            color: white;
+        }
+
+        .contact .section-heading p {
+            color: #d7e4d9;
+        }
+
+        .contact-grid {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .contact-info p {
+            margin-bottom: 16px;
+            color: #e0e9e1;
+        }
+
+        form {
+            background: white;
+            color: var(--text);
+            padding: 28px;
+            border-radius: 8px;
+        }
+
+        form h3 {
+            color: var(--green);
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #cbd2cb;
+            border-radius: 4px;
+            font: inherit;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #719879;
+            border-color: var(--green);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            background: var(--green);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: var(--dark-green);
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: #657066;
+            margin-top: 12px;
+        }
+
+        footer {
+            background: #0b2016;
+            color: #d7e4d9;
+            padding: 24px 7%;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .brand {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                min-height: 420px;
+                padding-top: 65px;
+                padding-bottom: 65px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .button {
+                margin: 5px 0;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .section-heading h2,
+            .about-text h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <div class="logo" aria-label="Rural services logo">
+                🌿
+            </div>
+
+            <div>
+                <h1>Ryan's Rural Services</h1>
+                <p>LOCAL WORK. RELIABLE SERVICE.</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    Proudly serving the Wairarapa
+                </p>
+
+                <h2>Helping Out Around The Farm & Home.</h2>
+
+                <p>
+                    Need a hand with outdoor jobs?
+                    From stacking firewood to cleaning cars
+                    and mowing lawns, Ryan's Rural Services
+                    is here to help.
+                </p>
+
+                <a class="button" href="#contact">
+                    Request a Quote
+                </a>
+
+                <a class="button button-outline" href="#services">
+                    View Services
+                </a>
+
+            </div>
+        </section>
+
+        <section class="services" id="services">
+
+            <div class="section-heading">
+                <h2>What I Can Help With</h2>
+
+                <p>
+                    Practical help for local homes and rural
+                    properties throughout the Wairarapa.
+                    Get in touch to discuss your job.
+                </p>
+            </div>
+
+            <div class="service-grid">
+
+                <article class="service-card">
+                    <div class="service-icon">🪵</div>
+
+                    <h3>Wood Stacking</h3>
+
+                    <p>
+                        Need your firewood stacked and organised?
+                        I can help get your wood pile tidy
+                        and ready for the colder months.
+                    </p>
+
+                    <span class="price">Price on request</span>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">🚗</div>
+
+                    <h3>Car Cleaning</h3>
+
+                    <p>
+                        Give your vehicle some attention
+                        with a clean inside or outside.
+                        Ask about the cleaning options available.
+                    </p>
+
+                    <span class="price">Price on request</span>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">🌱</div>
+
+                    <h3>Lawn Mowing</h3>
+
+                    <p>
+                        Need a lawn tidied up?
+                        Get in touch to discuss your lawn,
+                        the area to be mowed and the job required.
+                    </p>
+
+                    <span class="price">Price on request</span>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">🛠️</div>
+
+                    <h3>Other Small Jobs</h3>
+
+                    <p>
+                        Have another small outdoor job
+                        that needs doing? Send through
+                        the details and ask for a quote.
+                    </p>
+
+                    <span class="price">Price on request</span>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="about">
+
+            <div class="about-grid">
+
+                <div class="about-panel">
+                    <h3>Why Choose Ryan's?</h3>
+
+                    <ul>
+                        <li>Local Wairarapa service</li>
+                        <li>Friendly communication</li>
+                        <li>Quotes before work begins</li>
+                        <li>Help with everyday outdoor jobs</li>
+                        <li>Jobs discussed to suit your needs</li>
+                    </ul>
+                </div>
+
+                <div class="about-text">
+                    <h2>A Local Hand When You Need It</h2>
+
+                    <p>
+                        Ryan's Rural Services is focused on
+                        helping people around the Wairarapa
+                        with practical jobs at home and on
+                        rural properties.
+                    </p>
+
+                    <p>
+                        Whether you need firewood stacked,
+                        your car cleaned or your lawn mowed,
+                        send through an enquiry to discuss
+                        the work and get a quote.
+                    </p>
+
+                    <p>
+                        Every job is different, so pricing
+                        depends on the work involved.
+                        You'll be able to discuss the price
+                        before agreeing to a job.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+
+            <div class="section-heading">
+                <h2>Request a Quote</h2>
+
+                <p>
+                    Tell me a little about the job,
+                    and I'll get back to you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <h3>Let's Talk About Your Job</h3>
+
+                    <p>
+                        📍 <strong>Service area:</strong><br>
+                        Wairarapa, New Zealand
+                    </p>
+
+                    <p>
+                        🪵 Wood stacking<br>
+                        🚗 Car cleaning<br>
+                        🌱 Lawn mowing<br>
+                        🛠️ Other small jobs
+                    </p>
+
+                    <p>
+                        Pricing is provided on request.
+                        Please include your location,
+                        the job you need done and any
+                        useful details.
+                    </p>
+                </div>
+
+                <form id="quote-form">
+
+                    <h3>Job Enquiry</h3>
+
+                    <label for="name">Your name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        autocomplete="name"
+                        placeholder="Enter your name"
+                    >
+
+                    <label for="email">Your email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        placeholder="Enter your email"
+                    >
+
+                    <label for="service">What do you need?</label>
+
+                    <select id="service" name="service" required>
+                        <option value="">Choose a service</option>
+                        <option>Wood stacking</option>
+                        <option>Car cleaning</option>
+                        <option>Lawn mowing</option>
+                        <option>Other small jobs</option>
+                    </select>
+
+                    <label for="location">Your general location</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="e.g. Masterton"
+                    >
+
+                    <label for="details">Tell me about the job</label>
+                    <textarea
+                        id="details"
+                        name="details"
+                        required
+                        placeholder="Describe the work you need done"
+                    ></textarea>
+
+                    <button class="submit-button" type="submit">
+                        Send Quote Enquiry
+                    </button>
+
+                    <p class="form-note">
+                        This form opens an email draft for you
+                        to review and send. It does not
+                        automatically send or store enquiries.
+                    </p>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Ryan's Rural Services</strong></p>
+
+        <p>Serving the Wairarapa, New Zealand</p>
+
+        <p>
+            © <span id="year"></span>
+            Ryan's Rural Services. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        document.getElementById("quote-form")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const form = event.target;
+
+                const name = form.elements["name"].value.trim();
+                const email = form.elements["email"].value.trim();
+                const service = form.elements["service"].value;
+                const location = form.elements["location"].value.trim();
+                const details = form.elements["details"].value.trim();
+
+                const businessEmail =
+                    "ryancutfield@icloud.com";
+
+                const subject = encodeURIComponent(
+                    "Quote enquiry - " + service
+                );
+
+                const body = encodeURIComponent(
+                    "New quote enquiry for Ryan's Rural Services\n\n" +
+                    "Customer name: " + name + "\n" +
+                    "Customer email: " + email + "\n" +
+                    "Service requested: " + service + "\n" +
+                    "General location: " + location + "\n\n" +
+                    "Job details:\n" + details + "\n"
+                );
+
+                window.location.href =
+                    "mailto:" + businessEmail +
+                    "?subject=" + subject +
+                    "&body=" + body;
+            });
+    </script>
+
+</body>
+</html>
